@@ -2,15 +2,7 @@ module Main exposing (AppModel, AppMsg(..), init, main, update, view)
 
 import Browser
 import Bulma.CDN exposing (..)
-import Bulma.Components exposing (..)
-import Bulma.Elements exposing (..)
-import Bulma.Form exposing (..)
-import Bulma.Layout exposing (..)
-import Bulma.Modifiers exposing (..)
-import Bulma.Modifiers.Typography exposing (textCentered)
-import Html exposing (Html, div, h1, h2, img, main_, p, span, text)
-import Html.Attributes exposing (placeholder, src, value)
-import Html.Events exposing (onClick, onInput)
+import Html exposing (Html, main_)
 import Todo
 
 

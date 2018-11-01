@@ -1,13 +1,12 @@
 module Todo exposing (Model, Msg, init, update, view)
 
-import Bulma.Columns exposing (..)
 import Bulma.Components exposing (..)
 import Bulma.Elements exposing (..)
 import Bulma.Form exposing (..)
 import Bulma.Layout exposing (..)
 import Bulma.Modifiers exposing (..)
 import Bulma.Modifiers.Typography exposing (textCentered)
-import Html exposing (Attribute, Html, div, main_, text)
+import Html exposing (Attribute, Html, text)
 import Html.Attributes exposing (placeholder, src, value)
 import Html.Events exposing (keyCode, on, onClick, onInput)
 import Json.Decode as Json
@@ -145,24 +144,22 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ hero
-            { bold = False
-            , size = Standard
-            , color = Default
-            }
-            []
-            [ heroBody []
-                [ container []
-                    [ title H1 [] [ text "My tasks" ]
-                    , case List.length model.tasks of
-                        0 ->
-                            noMoreTask
+    hero
+        { bold = False
+        , size = Standard
+        , color = Default
+        }
+        []
+        [ heroBody []
+            [ container []
+                [ title H1 [] [ text "My tasks" ]
+                , case List.length model.tasks of
+                    0 ->
+                        noMoreTask
 
-                        _ ->
-                            taskTable model
-                    , taskForm model
-                    ]
+                    _ ->
+                        taskTable model
+                , taskForm model
                 ]
             ]
         ]
